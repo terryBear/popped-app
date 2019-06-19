@@ -22,6 +22,9 @@ npm install
 ionic serve
 ```
 
+## Tecnology
+You will need to have [IONIC](https://ionicframework.com/docs/cli) and [ANGULAR](https://angular.io/) installed.
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
