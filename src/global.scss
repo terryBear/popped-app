@@ -9,3 +9,38 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+
+h1 {
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: var(--ion-color-warning);
+    font-size: 36px;
+}
+p {
+    font-weight: 100;
+    color: var(--ion-color-danger);
+    font-size: 16px;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .main-icon {
+        max-width: 320px;
+    }
+
+    ion-button {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        height: 60px;
+        font-size: 12px;
+        --padding-start: 50px;
+        --padding-end: 50px;
+        margin-top: 40px;
+    }
+}

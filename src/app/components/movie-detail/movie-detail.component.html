@@ -1,0 +1,51 @@
+<ion-header no-border>
+  <ion-toolbar no-border>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="arrow-round-back" mode="md"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div padding>
+    <h1>{{movie.title ? movie.title : 'Create Movie'}}</h1>
+    <p>{{movie.description ? movie.description : 'Enter the information below to create a movie.'}}</p>
+  </div>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label position="stacked">Title</ion-label>
+      <ion-input type="text" [(ngModel)]="movie.title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Description</ion-label>
+      <ion-input type="text" [(ngModel)]="movie.description" name="description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Restrictions</ion-label>
+      <ion-select [(ngModel)]="movie.restriction" multiple="false" placeholder="Restrictions">
+        <ion-select-option value="R">R</ion-select-option>
+        <ion-select-option value="18">18</ion-select-option>
+        <ion-select-option value="16">16</ion-select-option>
+        <ion-select-option value="13">13</ion-select-option>
+        <ion-select-option value="R">PG</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Language</ion-label>
+      <ion-select [(ngModel)]="movie.language" multiple="false" placeholder="Language">
+        <ion-select-option value="English">English</ion-select-option>
+        <ion-select-option value="Spanish">Spanish</ion-select-option>
+        <ion-select-option value="French">French</ion-select-option>
+        <ion-select-option value="Afrikaans">Afrikaans</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer no-border>
+  <ion-toolbar no-border color="secondary">
+    <ion-button expand="full" color="secondary" (click)="saveMovie(movie)">
+      Save
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

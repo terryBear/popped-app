@@ -1,0 +1,43 @@
+<ion-header no-border>
+  <ion-toolbar no-border>
+    <ion-buttons slot="start">
+      <ion-button (click)="dismiss()">
+        <ion-icon name="arrow-round-back" mode="md"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-searchbar *ngIf="movies.length > 0" placeholder="Search Movie Titles" (ionChange)="onSearchChange($event)" [debounce]="250"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ng-container *ngIf="movies.length > 0">
+    <h1>Latest Movies</h1>
+    <p>View the latest movie titles below.</p>
+    <ion-list lines="full">
+      <ng-container *ngFor="let m of movies">
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img src="../../../assets/icon.png" >
+          </ion-thumbnail>
+          <ion-label text-wrap (click)="showDetail(m)">
+            <h1>{{m.title}}</h1>
+            <p>{{m.description}}</p>
+            <p><span>{{m.restriction}} {{m.language}}</span></p>
+          </ion-label>
+          <ion-button size="large" fill="clear" color="danger" (click)="presentConfirm(m)">
+            <ion-icon name="trash"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ng-container>
+    </ion-list>
+  </ng-container>
+  <ng-container *ngIf="movies.length === 0">
+    <div class="main-container" text-center>
+      <img src="../../../assets/icon.png"  class="main-icon">
+      <h1>No Movies</h1>
+      <p>You have no movies. Add a movie by clicking the button below.</p>
+      <ion-button color="secondary" shape="round" (click)="showDetail()">
+        Add Movie
+      </ion-button>
+    </div>
+  </ng-container>
+</ion-content>
